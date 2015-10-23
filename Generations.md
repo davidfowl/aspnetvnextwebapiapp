@@ -35,8 +35,14 @@ e.g. If a library targets Generation 5.4, it can run *only* run on .NET 4.6, Uni
 |5.5|.NET Framework >= 4.6.x| 
 ||DNX Core >= 5.0|
 
+Here's another view of the same information:
+
+![Generations](https://jabbrlive.blob.core.windows.net/jabbr-uploads/clipboard_5130.png)
+
 Each generation enables more features, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
+
+
 
 **TODO: Xamarin Platforms**
 
