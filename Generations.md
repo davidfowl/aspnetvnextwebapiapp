@@ -72,6 +72,9 @@ The above package targets .NET Framework 4.5.
 | Universal Windows Platform 10 | uap10, netcore50 |
 | DNX Core 5.0 | dnxcore50  |
 
+### What determines when a generation versions
+The generation is determined by a set of **Core API surface** that must be available on all platforms that support that generation. This core set of API surface is **TBD**.
+
 ### Questions
 - How do Xamarin Platforms map to the existing generations?
 - How do portable class libraries profiles map to existing generations?
@@ -80,7 +83,7 @@ The above package targets .NET Framework 4.5.
   - Generations can't be consumed by PCL projects or other PCL profiles, they are not mapped today.
   - Do we do a one time conversion over to generations from PCL profiles? This needs to be back ported to NuGet v2 to make any sense.
 
-### List of BCL APIs and their associated generations (subject to updates)
+### List of BCL APIs and their associated generations (subject to change)
 
 #### Legend 
 - `X` - API appeared in specific generation
