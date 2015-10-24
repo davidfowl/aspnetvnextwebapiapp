@@ -42,6 +42,10 @@ Here's another view of the same information:
 Each generation enables more features, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
+### What determines when a generation versions?
+The generation is determined by a set of **Core API surface** that must be available on all platforms that support that generation. This core set of API surface is **TBD**.
+
+
 ### NuGet mapping
 When building a NuGet package, specifing folder with the mapping is enough to indicate what platforms your package targets.
 
@@ -71,9 +75,6 @@ The above package targets .NET Framework 4.5.
 | Windows Phone 8.1 | wpa8.1 |
 | Universal Windows Platform 10 | uap10, netcore50 |
 | DNX Core 5.0 | dnxcore50  |
-
-### What determines when a generation versions
-The generation is determined by a set of **Core API surface** that must be available on all platforms that support that generation. This core set of API surface is **TBD**.
 
 ### Questions
 - How do Xamarin Platforms map to the existing generations?
