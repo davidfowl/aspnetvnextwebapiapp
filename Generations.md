@@ -42,10 +42,6 @@ Here's another view of the same information:
 Each generation enables more features, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
-
-
-**TODO: Xamarin Platforms**
-
 ### NuGet mapping
 When building a NuGet package, specifing folder with the mapping is enough to indicate what platforms your package targets.
 
@@ -76,7 +72,15 @@ The above package targets .NET Framework 4.5.
 | Universal Windows Platform 10 | uap10, netcore50 |
 | DNX Core 5.0 | dnxcore50  |
 
-### List of BCL APIs and their associated generations
+### Questions
+- How do Xamarin Platforms map to the existing generations?
+- How do portable class libraries profiles map to existing generations?
+- How do library authors write packages that work in both `packages.config` world and `project.json` world.
+- Why would library authors that have existing PCLs inside nuget packages move over to this model? Can we bridge the worlds somehow?
+  - Generations can't be consumed by PCL projects or other PCL profiles, they are not mapped today.
+  - Do we do a one time conversion over to generations from PCL profiles? This needs to be back ported to NuGet v2 to make any sense.
+
+### List of BCL APIs and their associated generations (subject to updates)
 
 #### Legend 
 - `X` - API appeared in specific generation
