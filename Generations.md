@@ -4,6 +4,9 @@
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
 - **Generation** - A representation of the common surface area across *all* Platforms.
 
+### Formal definition
+A generation defines the API exposed by a set of contracts we define as **STDLIB**. Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
+
 Platforms expose .NET surface area from a particular generation.
 
 Below is the mapping table from platform to generation. Targeting a generation means you can run on the platform specified on the right. 
@@ -43,7 +46,7 @@ Each generation enables more API surface, which means it's available on fewer pl
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
 ### What determines when a generation versions?
-The generation is determined by a set of **Core API surface** that must be available on all platforms that support that generation. This core set of API surface is **TBD**.
+The generation is determined by **STDLIB** that must be available on all platforms that support that generation. This API surface is **TBD**.
 
 
 ### NuGet mapping
