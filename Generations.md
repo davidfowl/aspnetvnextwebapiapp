@@ -11,7 +11,7 @@ Platforms expose .NET surface area from a particular generation.
 
 Below is the mapping table from platform to generation. Targeting a generation means you can run on the platform specified on the right. 
 
-e.g. If a library targets Generation 5.4, it can run *only* run on .NET 4.6, Universal Windows Platform 10 (UWP) and DNX Core 5.0
+e.g. If a library targets Generation 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP) and DNX Core 5.0
 
 | Generation | Supported Platforms |
 | :---------- | :--------- |
