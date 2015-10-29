@@ -87,7 +87,7 @@ The above package targets .NET Framework 4.5.
   - Generations can't be consumed by PCL projects or other PCL profiles, they are not mapped today.
   - Do we do a one time conversion over to generations from PCL profiles? This needs to be back ported to NuGet v2 to make any sense.
 
-### List of BCL APIs and their associated generations (subject to change)
+### List of CoreFx APIs and their associated generations (subject to change)
 
 #### Legend 
 - `X` - API appeared in specific generation
