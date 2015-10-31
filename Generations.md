@@ -13,33 +13,6 @@ Below is the mapping table from platform to generation. Targeting a generation m
 
 e.g. If a library targets Generation 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP) and DNX Core 5.0
 
-| Generation | Supported Platforms |
-| :---------- | :--------- |
-| 5.1 |.NET Framework >= 4.5 |
-||Windows Store >= 8 |
-||Windows Phone >= 8.1|
-||Universal Windows Platform 10 (UWP) |
-||DNX Core >= 5.0|
-||Windows Phone Silverlight 8 |
-||Windows Phone Silverlight 8.1 |
-| 5.2 |.NET Framework >= 4.5 | 
-||Windows Store >= 8| 
-||Windows Phone >= 8.1| 
-||Universal Windows Platform 10 (UWP)|
-||DNX Core >= 5.0 |
-|5.3|.NET Framework >= 4.5.1| 
-||Windows Store >= 8.1| 
-||Windows Phone >= 8.1| 
-||Universal Windows Platform 10 (UWP)| 
-||DNX Core >= 5.0 |
-|5.4|.NET Framework >= 4.6| 
-||Universal Windows Platform 10 (UWP)| 
-||DNX Core >= 5.0|
-|5.5|.NET Framework >= 4.6.x| 
-||DNX Core >= 5.0|
-
-Here's another view of the same information:
-
 ![Generations](https://jabbrlive.blob.core.windows.net/jabbr-uploads/clipboard_5130.png)
 
 Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
