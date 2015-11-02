@@ -25,7 +25,7 @@ Platforms which have stopped revving -- like Silverlight on the phone -- will on
 
 ### TODO:
 - Map Xamarin Platforms map to the existing generations
-- Map portable class library profile numbers to existing generations (e.g Profile7 = Generation 5.1)
+- Map portable class library profile numbers to existing generations (e.g Profile7 = Generation 5.1). PCL projects can consume packages with dotnet5.x but not vice versa.
 
 ## NuGet
 
