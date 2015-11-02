@@ -1,5 +1,5 @@
 # .NET Portable Generations
-.NET Generation represent binary portability across platforms using a single moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
+.NET Portable Generations represent binary portability across platforms using a single moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
 
 ## Terms
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
