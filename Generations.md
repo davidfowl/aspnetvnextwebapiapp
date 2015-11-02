@@ -23,6 +23,10 @@ If a library targets Generation 5.4, it can run *only* run on .NET 4.6 or later,
 Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
+### TODO:
+- Map Xamarin Platforms map to the existing generations
+- Map portable class library profile numbers to existing generations (e.g Profile7 = Generation 5.1)
+
 ## NuGet
 When building a NuGet package, specifing folder with the mapping is enough to indicate what platforms your package targets.
 
@@ -71,12 +75,6 @@ In order to support platforms that implement a subset of the reference assemblie
 ```
 
 The above `project.json` will cause NuGet to do a compatibiltiy check, enfocing that an implementation assembly for `System.AppContext` can be found.
-
-
-### TODO:
-- Map Xamarin Platforms map to the existing generations
-- Map portable class library profile numbers to existing generations (e.g Profile7 = Generation 5.1)
-- Make the dotnet moniker work in both `packages.config` world and `project.json` world.
 
 ## List of CoreFx APIs and their associated generations (tentative)
 
