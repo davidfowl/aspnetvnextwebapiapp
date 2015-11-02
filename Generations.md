@@ -7,7 +7,7 @@
 - **Generation** - a versioned set of the available reference assemblies across all platforms
 
 ### Formal definition
-A generation defines the API across all platforms. Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
+Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
 
 Platforms expose .NET surface area from a particular generation.
 
