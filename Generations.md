@@ -76,7 +76,23 @@ MyPackage/lib/dotnet5.4/MyPackage.dll
 The above package targets .NET Platform 5.4 (Generation 5.4)
 
 #### Migrating existing PCLs in NuGet packages
-**TODO**
+Using the table outlined in above, use the profile number of the csproj used to build the portable assembly to determine what nuget folder it should go into. For example, **Newtonsoft.Json 7.0.1** has 2 portable folders:
+
+```
+Newtonsoft.Json/7.0.1/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll
+Newtonsoft.Json/7.0.1/lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll
+```
+
+Only one of these can be convert to a dotnet5.x based reference. Based on this csproj, we can see that the second PCL project is really profile 259.
+
+https://github.com/JamesNK/Newtonsoft.Json/blob/d4916a76b5ed94342944cc665372dcc5dbd9e389/Src/Newtonsoft.Json/Newtonsoft.Json.Portable.csproj#L12
+
+```
+Newtonsoft.Json/7.0.1/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll
+Newtonsoft.Json/7.0.1/lib/dotnet5.1/Newtonsoft.Json.dll
+```
+
+**TODO: Specifying dependencies when migrating from a profile based PCL**
 
 ### Guard rails (supports)
 In order to support platforms that implement a subset of the reference assemblies in a generation, guard rails were introduced to help class library authors predict where their libraries will run. As an example, we introduce a new platform **.NET Banana 1.0**. **.NET Banana 1.0** did not implement the `System.AppContext` reference assembly. Class libraries authors targeting generation 5.4 need to know that their package may not work on **.NET Banana 1.0**.
