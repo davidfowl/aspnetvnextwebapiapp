@@ -2,9 +2,9 @@
 .NET Generation represent binary portability across platforms using a single moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
 
 ## Terms
-- **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run.
-- **Implementation Assembly** - An assembly that contains an implementation of a reference assembly.
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
+- **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run.
+- **Implementation Assembly** - An assembly that contains an implementation of a reference assembly. These are usually implemented in the platform itself and cannot be updated without updating the platform.
 - **Generation** - a versioned set of the available reference assemblies across all platforms
 
 ## Principles
