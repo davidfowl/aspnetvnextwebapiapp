@@ -4,7 +4,7 @@
 - **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run.
 - **Implementation Assembly** - An assembly that contains an implementation of a reference assembly.
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
-- **Generation** - a version set of the available reference assemblies across all platforms
+- **Generation** - a versioned set of the available reference assemblies across all platforms
 
 ### Formal definition
 A generation defines the API across all platforms. Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
