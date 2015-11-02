@@ -1,17 +1,18 @@
-### .NET Generations
+# .NET Generations
+.NET Generation represent binary portability across platforms using a single moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
 
-### Terms
+## Terms
 - **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run.
 - **Implementation Assembly** - An assembly that contains an implementation of a reference assembly.
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
 - **Generation** - a versioned set of the available reference assemblies across all platforms
 
-### Formal definition
-Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
+## Principles
+- Platforms expose .NET surface area from a particular generation.
+- Any change in a reference assembly's API surface causes the generation to version.
 
-Platforms expose .NET surface area from a particular generation.
-
-Below is the mapping table from platform to generation. Targeting a generation means you can run on the platform specified on the right. 
+## Existing Generations
+Below is the mapping table from existing platforms to their generation.
 
 e.g. If a library targets Generation 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP) and DNX Core 5.0
 
@@ -20,11 +21,7 @@ e.g. If a library targets Generation 5.4, it can run *only* run on .NET 4.6 or l
 Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
-### What determines when a generation versions?
-Any API changes cause a generation to version.
-
-
-### NuGet mapping
+## NuGet
 When building a NuGet package, specifing folder with the mapping is enough to indicate what platforms your package targets.
 
 MyPackage
@@ -36,13 +33,13 @@ The above package targets .NET Framework 4.5.
 
 **TODO: List other rules around dependency groups in nuget packages with examples.**
 
-#### Generation mapping
+### Generation mapping
 
 | Generation | NuGet identifier |
 | ---------| --------------- |
 | 5.1-5.5 | dotnet5.1, dotnet5.5 |
 
-#### Specific platform mapping
+### Specific platform mapping
 
 | Platform | NuGet identifier |
 | ---------| --------------- |
@@ -62,9 +59,9 @@ The above package targets .NET Framework 4.5.
   - Generations can't be consumed by PCL projects or other PCL profiles, they are not mapped today.
   - Do we do a one time conversion over to generations from PCL profiles? This needs to be back ported to NuGet v2 to make any sense.
 
-### List of CoreFx APIs and their associated generations (subject to change)
+## List of CoreFx APIs and their associated generations (subject to change)
 
-#### Legend 
+### Legend 
 - `X` - API appeared in specific generation
 - `⇠` - API version determined by nearest `X` e.g. In the table below, if you target generation 5.5 and reference Microsoft.CSharp, you'd get the 5.1 API version.
 
