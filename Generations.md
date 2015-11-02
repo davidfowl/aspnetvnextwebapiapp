@@ -28,16 +28,6 @@ Platforms which have stopped revving -- like Silverlight on the phone -- will on
 - Map portable class library profile numbers to existing generations (e.g Profile7 = Generation 5.1)
 
 ## NuGet
-When building a NuGet package, specifing folder with the mapping is enough to indicate what platforms your package targets.
-
-MyPackage
-```
-MyPackage/lib/net45/MyPackage.dll
-```
-
-The above package targets .NET Framework 4.5.
-
-**TODO: List other rules around dependency groups in nuget packages with examples.**
 
 ### Generation mapping
 
@@ -56,6 +46,19 @@ The above package targets .NET Framework 4.5.
 | Windows Phone 8.1 | wpa8.1 |
 | Universal Windows Platform 10 | uap10, netcore50 |
 | DNX Core 5.0 | dnxcore50  |
+
+### Package authoring
+When building a NuGet package, specifing folder with the mapping is enough to indicate what platforms your package targets.
+
+MyPackage
+```
+MyPackage/lib/dotnet5.4/MyPackage.dll
+```
+
+The above package targets .NET Platform 5.4 (Generation 5.4)
+
+#### Migrating existing PCLs in NuGet packages
+**TODO**
 
 ### Guard rails (supports)
 In order to support platforms that implement a subset of the reference assemblies in a generation, guard rails were introduced to help class library authors predict where their libraries will run. As an example, we introduce a new platform **.NET Banana 1.0**. **.NET Banana 1.0** did not implement the `System.AppContext` reference assembly. Class libraries authors targeting generation 5.4 need to know that their package may not work on **.NET Banana 1.0**.
