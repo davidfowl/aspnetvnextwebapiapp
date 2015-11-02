@@ -54,7 +54,7 @@ The above package targets .NET Framework 4.5.
 
 ### TODO:
 - Map Xamarin Platforms map to the existing generations
-- Map portable class library profile numbers to existing generations?
+- Map portable class library profile numbers to existing generations (e.g Profile7 = Generation 5.1)
 - Make the dotnet moniker work in both `packages.config` world and `project.json` world.
 
 ## List of CoreFx APIs and their associated generations (tentative)
