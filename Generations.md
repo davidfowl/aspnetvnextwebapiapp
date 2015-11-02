@@ -5,7 +5,7 @@
 - **Generation** - A representation of the common surface area across *all* Platforms.
 
 ### Formal definition
-A generation defines the API exposed by a set of contracts we define as **STDLIB**. Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
+A generation defines the API exposed by contracts across *all* Platforms. Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
 
 Platforms expose .NET surface area from a particular generation.
 
