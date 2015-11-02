@@ -8,7 +8,8 @@
 - **Generation** - a versioned set of the reference assemblies across all platforms supported by the generation.
 
 ## Principles
-- Platforms expose .NET surface area from a particular generation.
+- Platforms owners implement reference assemblies from a particular generation.
+- Platforms owners may implement a subset of reference assemblies from a particular generation.
 - Any change in a reference assembly's API surface causes the generation to version.
 - Lower generations are always compatible with higher generations.
 
@@ -51,6 +52,26 @@ The above package targets .NET Framework 4.5.
 | Windows Phone 8.1 | wpa8.1 |
 | Universal Windows Platform 10 | uap10, netcore50 |
 | DNX Core 5.0 | dnxcore50  |
+
+### Guard rails (supports)
+In order to support platforms that implement a subset of the reference assemblies in a generation, guard rails were introduced to help class library authors predict where their libraries will run. As an example, we introduce a new platform **.NET Banana 1.0**. **.NET Banana 1.0** did not implement the `System.AppContext` reference assembly. Class libraries authors targeting generation 5.4 need to know that their package may not work on **.NET Banana 1.0**.
+
+```JSON
+{
+   "supports": [
+      ".NET Banana 1.0"
+   ],
+   "dependencies": {
+      "System.AppContext": "5.0.0"
+   },
+   "frameworks": {
+      "dotnet5.4": { }
+   } 
+}
+```
+
+The above `project.json` will cause NuGet to do a compatibiltiy check, enfocing that an implementation assembly for `System.AppContext` can be found.
+
 
 ### TODO:
 - Map Xamarin Platforms map to the existing generations
