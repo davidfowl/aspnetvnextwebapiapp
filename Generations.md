@@ -10,6 +10,7 @@
 ## Principles
 - Platforms expose .NET surface area from a particular generation.
 - Any change in a reference assembly's API surface causes the generation to version.
+- Lower generations are always compatible with higher generations.
 
 ## Existing Generations
 Below is the mapping table from existing platforms to their generation.
