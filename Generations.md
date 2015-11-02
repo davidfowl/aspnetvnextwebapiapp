@@ -23,9 +23,27 @@ If a library targets Generation 5.4, it can run *only* run on .NET 4.6 or later,
 Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
+### Portable Profiles
+
+PCL projects will be able to consume packages with dotnet5.x but not vice versa.
+
+| Profile | Generation |
+| ---------| --------------- |
+| Profile7	.NET Portable Subset (.NET Framework 4.5, Windows 8) | 5.2 |
+| Profile31	.NET Portable Subset (Windows 8.1, Windows Phone Silverlight 8.1)| 5.1|
+| Profile32	.NET Portable Subset (Windows 8.1, Windows Phone 8.1) | 5.3 |
+| Profile44	.NET Portable Subset (.NET Framework 4.5.1, Windows 8.1) | 5.3 |
+| Profile49	.NET Portable Subset (.NET Framework 4.5, Windows Phone Silverlight 8) | 5.1 |
+| Profile78	.NET Portable Subset (.NET Framework 4.5, Windows 8, Windows Phone Silverlight 8) | 5.1 |
+| Profile84	.NET Portable Subset (Windows Phone 8.1, Windows Phone Silverlight 8.1) | 5.1 |
+| Profile111 .NET Portable Subset (.NET Framework 4.5, Windows 8, Windows Phone 8.1) | 5.2 |
+| Profile151 .NET Portable Subset (.NET Framework 4.5.1, Windows 8.1, Windows Phone 8.1) | 5.3 |
+| Profile157 .NET Portable Subset (Windows 8.1, Windows Phone 8.1, Windows Phone Silverlight 8.1) | 5.1 |
+| Profile259 .NET Portable Subset (.NET Framework 4.5, Windows 8, Windows Phone 8.1, Windows Phone Silverlight 8) | 5.1 |
+
+
 ### TODO:
 - Map Xamarin Platforms map to the existing generations
-- Map portable class library profile numbers to existing generations (e.g Profile7 = Generation 5.1). PCL projects can consume packages with dotnet5.x but not vice versa.
 
 ## NuGet
 
