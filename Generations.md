@@ -77,7 +77,22 @@ In order to support platforms that implement a subset of the reference assemblie
 }
 ```
 
-The above `project.json` will cause NuGet to do a compatibiltiy check, enfocing that an implementation assembly for `System.AppContext` can be found.
+The above `project.json` will cause NuGet to do a compatibiltiy check, enforcing that an implementation assembly for `System.AppContext` can be found on **.NET Banana 1.0**. If this dependency check fails, you have 2 options:
+
+1. Don't support **.NET Banana 1.0**
+2. Cross compile for **.NET Banana 1.0** by adding that framework **explicitly** (this is only supported in xproj) and use the platform specific alternative to the `System.AppContext` API (if one exists).
+```JSON
+{
+   "frameworks": {
+      "dotnet5.4": { 
+         "dependencies": {
+            "System.AppContext": "5.0.0"
+         }
+      },
+      "netbanana1.0": { }
+   } 
+}
+```
 
 ## List of CoreFx APIs and their associated generations (tentative)
 
