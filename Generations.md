@@ -52,13 +52,10 @@ The above package targets .NET Framework 4.5.
 | Universal Windows Platform 10 | uap10, netcore50 |
 | DNX Core 5.0 | dnxcore50  |
 
-### Questions
-- How do Xamarin Platforms map to the existing generations?
-- How do portable class libraries profiles map to existing generations?
-- How do library authors write packages that work in both `packages.config` world and `project.json` world.
-- Why would library authors that have existing PCLs inside nuget packages move over to this model? Can we bridge the worlds somehow?
-  - Generations can't be consumed by PCL projects or other PCL profiles, they are not mapped today.
-  - Do we do a one time conversion over to generations from PCL profiles? This needs to be back ported to NuGet v2 to make any sense.
+### TODO:
+- Map Xamarin Platforms map to the existing generations
+- Map portable class library profile numbers to existing generations?
+- Make the dotnet moniker work in both `packages.config` world and `project.json` world.
 
 ## List of CoreFx APIs and their associated generations (subject to change)
 
