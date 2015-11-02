@@ -21,7 +21,7 @@ Each generation enables more API surface, which means it's available on fewer pl
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
 ### What determines when a generation versions?
-The generation is determined by **STDLIB** that must be available on all platforms that support that generation. This API surface is **TBD**.
+Any API changes cause a generation to version.
 
 
 ### NuGet mapping
