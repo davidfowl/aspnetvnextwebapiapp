@@ -1,5 +1,5 @@
-# .NET Portable Generations
-.NET Portable Generations represent binary portability across platforms using a single moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
+# .NET Platform Generations
+.NET Platform Generations represent binary portability across platforms using a single moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
 
 ## Terms
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
@@ -57,7 +57,7 @@ The above package targets .NET Framework 4.5.
 - Map portable class library profile numbers to existing generations?
 - Make the dotnet moniker work in both `packages.config` world and `project.json` world.
 
-## List of CoreFx APIs and their associated generations (subject to change)
+## List of CoreFx APIs and their associated generations (tentative)
 
 ### Legend 
 - `X` - API appeared in specific generation
