@@ -1,8 +1,10 @@
 ### .NET Generations
 
-### Terms and examples
+### Terms
+- **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run.
+- **Implementation Assembly** - An assembly that contains an implementation of a reference assembly.
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
-- **Generation** - A representation of the common surface area across *all* Platforms.
+- **Generation** - A version of the set reference assemblies across *all* Platforms.
 
 ### Formal definition
 A generation defines the API exposed by contracts across *all* Platforms. Generations are the pivot for portable surface area. They are the only supported moniker that aggregates multiple target monikers to provide a common surface area supported by all those monikers. Generations are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** was.
