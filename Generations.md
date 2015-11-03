@@ -81,7 +81,7 @@ PCL projects will be able to consume packages with dotnet5.x but not vice versa.
 | Universal Windows Platform 10 | uap10, netcore50 |
 | DNX 4.5.1 - 4.6 | dnx451 - dnx46 |
 | DNX Core 5.0 | dnxcore50  |
-| Silverlight 4,5 | sl4, sl5 |
+| Silverlight 4, 5 | sl4, sl5 |
 | MonoAndroid | monoandroid |
 | MonoTouch | monotouch |
 | MonoMac | monomac |
