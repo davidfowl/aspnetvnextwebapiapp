@@ -1,4 +1,4 @@
-# .NET Platform Generations
+# .NET Standard Platform
 
 ## Why?
 Providing a more concrete gurantee of binary portability to future platforms.
@@ -12,29 +12,28 @@ MyLibrary/win8/MyLibrary.dll
 
 The biggest difference is that you wouldn't be able to consume it in a Portable Class Library project type.
 
-.NET Platform Generations represent binary portability across platforms using a **single** moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
+The .NET Standard Platform version represent binary portability across platforms using a **single** moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
 
-Generations are not too different than a the PortableXXX profiles people use today which get represented in NuGet as **portable-a+b+c** (eg. Profile111). The difference is that the **single** generation moniker evolves linearly such that NuGet and other tools can infer compatibility. Newer generations are compatible with older ones. 
+.NET Standard Platform versions are not too different than a the PortableXXX profiles people use today which get represented in NuGet as **portable-a+b+c** (eg. Profile111). The difference is that the **single** .NET Standard Platform version moniker evolves linearly such that NuGet and other tools can infer compatibility. Newer .NET Standard Platform versions are compatible with older ones. 
 
-When this feature is complete, generations will be be able to be computed for you from tooling similar to how profileXXX is chosen today. Many other rich experiences can also be built on top of this.
 
 ## Terms
 - **PCL** - Portable Class Library
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
 - **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run.
 - **Implementation Assembly** - An assembly that contains an implementation of a reference assembly. These are usually implemented in the platform itself and cannot be updated without updating the platform.
-- **Generation** - a versioned set of the reference assemblies across all platforms supported by the generation.
+- **.NET Standard Platform** - versioned sets of the reference assemblies.
 
 ## Principles
-- Platforms owners implement reference assemblies from a particular generation.
-- Platforms owners may implement a subset of reference assemblies from a particular generation.
-- Any change in a reference assembly's API surface causes the generation to version.
-- Lower generations are always compatible with higher generations.
+- Platforms owners implement reference assemblies from a particular .NET Standard Platform version.
+- Platforms owners may implement a subset of reference assemblies from a particular .NET Standard Platform version.
+- Any change in a reference assembly's API surface causes the .NET Standard Platform to version.
+- Lower versions are always compatible with higher versions.
 
-## Existing Generations
-Below is the mapping table from existing platforms to their generation.
+## Existing .NET Standard Platform versions
+Below is the mapping table from existing platforms to their .NET Standard Platform version.
 
-| Platform | Gen 5.1 | Gen 5.2 | Gen 5.3 | Gen 5.4 | Gen 5.5
+| Platform | 5.1 | 5.2 | 5.3 | 5.4 | 5.5
 | :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |
 |.NET Framework|⇠|4.5|||
 ||⇠|⇠|4.5.1||
@@ -53,17 +52,17 @@ Below is the mapping table from existing platforms to their generation.
 
 ### Observations
 
-- If a library targets generation 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP), DNX Core 5.0 and Mono/Xamarin Platforms. 
-- If a library targets generation 5.4, it can consume libraries from all previous generations (5.3, 5.2, 5.1).
-- Generations start from .NET 4.5 and up. This is because the new portable API surface area (aka **System.Runtime** based surface area) only became available on that platform. Targeting .NET <= 4.0 requires cross compilation.
-- Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation versions.
-- Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
+- If a library targets .NET Standard Platform version 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP), DNX Core 5.0 and Mono/Xamarin Platforms. 
+- If a library targets .NET Standard Platform version 5.4, it can consume libraries from all previous .NET Standard Platform versions (5.3, 5.2, 5.1).
+- .NET Standard Platform versions start from .NET 4.5 and up. This is because the new portable API surface area (aka **System.Runtime** based surface area) only became available on that platform. Targeting .NET <= 4.0 requires cross compilation.
+- Each .NET Standard Platform version enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer .NET Standard Platform versions.
+- Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest .NET Standard Platform versions.
 
 ### Portable Profiles
 
 PCL projects will be able to consume packages with dotnet5.x but not vice versa.
 
-| Profile | Generation |
+| Profile | .NET Standard Platform version |
 | ---------| --------------- |
 | Profile7	.NET Portable Subset (.NET Framework 4.5, Windows 8) | 5.2 |
 | Profile31	.NET Portable Subset (Windows 8.1, Windows Phone Silverlight 8.1)| 5.1|
@@ -79,16 +78,16 @@ PCL projects will be able to consume packages with dotnet5.x but not vice versa.
 
 **NOTE: Xamarin Platforms augment the existing profile numbers above.**
 
-Exising PCL projects in VS2013 and VS2015 (excluding UWP targets), can only target up to generation 5.3. To use generation >= 5.4 you have 2 options:
+Exising PCL projects in VS2013 and VS2015 (excluding UWP targets), can only target up to .NET Standard Platform version 5.3. To use .NET Standard Platform version >= 5.4 you have 2 options:
 
 - project.json with csproj based projects
 - xproj based projects
 
 ## NuGet
 
-### Generation mapping
+### .NET Standard Platform version mapping
 
-| Generation | NuGet identifier |
+| .NET Standard Platform version | NuGet identifier |
 | ---------| --------------- |
 | 5.1 - 5.5 | dotnet5.1 - dotnet5.5 |
 
@@ -134,7 +133,7 @@ MyPackage
 MyPackage/lib/dotnet5.4/MyPackage.dll
 ```
 
-The above package targets .NET Platform 5.4 (Generation 5.4)
+The above package targets .NET Platform 5.4 (.NET Standard Platform 5.4)
 
 #### Migrating existing PCLs in NuGet packages
 Using the table outlined in above, use the profile number of the csproj used to build the portable assembly to determine what nuget folder it should go into. For example, **Newtonsoft.Json 7.0.1** has 2 portable folders:
@@ -157,7 +156,7 @@ Newtonsoft.Json/7.0.1/lib/dotnet5.1/Newtonsoft.Json.dll
 
 #### Generating dependency references
 
-Unlike previous PCL packages, generation based targets require dependencies to be fully specified. The specific version of the dependency doesn't matter but the fact a depedency in stated does. To aid in making this simple in the short term [Oren Novotny](https://github.com/onovotny) built a tool that can be used to generate the correct depenencies for nuspec metadata for your generation based projects/assemblies: 
+Unlike previous PCL packages, .NET Standard Platform based targets require dependencies to be fully specified. The specific version of the dependency doesn't matter but the fact a depedency in stated does. To aid in making this simple in the short term [Oren Novotny](https://github.com/onovotny) built a tool that can be used to generate the correct depenencies for nuspec metadata for your .NET Standard Platform based projects/assemblies: 
 
 https://github.com/onovotny/ReferenceGenerator
 
@@ -180,7 +179,7 @@ PCLCrypto/1.0.80/lib/portable-win8+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTou
 
 When referencing this library from a PCL project, the portable-* dll is used for compilation. This is to allow other PCLs to be written against a consistent surface area across platforms. When referencing this package from a specific platform, the platform specific implementation is chosen.
 
-With generations, and NuGet v3, we have introduced a more formal approach to making these kinds of packages. PCLCrypto would change to look like the following:
+With .NET Standard Platform versions, and NuGet v3, we have introduced a more formal approach to making these kinds of packages. PCLCrypto would change to look like the following:
 
 ```
 PCLCrypto/1.0.80/lib/Xamarin.iOS/PCLCrypto.dll
@@ -192,10 +191,10 @@ PCLCrypto/1.0.80/lib/wpa81/PCLCrypto.dll
 PCLCrypto/1.0.80/ref/dotnet5.1/PCLCrypto.dll
 ```
 
-The `ref` folder is used to tell the compiler what assembly should be used for compilation. The generation should be chosen to cover all of the specific platforms in the package.
+The `ref` folder is used to tell the compiler what assembly should be used for compilation. The .NET Standard Platform should be chosen to cover all of the specific platforms in the package.
 
 ### Guard rails (supports)
-In order to support platforms that implement a subset of the reference assemblies in a generation, guard rails were introduced to help class library authors predict where their libraries will run. As an example, we introduce a new platform **.NET Banana 1.0**. **.NET Banana 1.0** did not implement the `System.AppContext` reference assembly. Class libraries authors targeting generation 5.4 need to know that their package may not work on **.NET Banana 1.0**.
+In order to support platforms that implement a subset of the reference assemblies in a .NET Standard Platform version, guard rails were introduced to help class library authors predict where their libraries will run. As an example, we introduce a new platform **.NET Banana 1.0**. **.NET Banana 1.0** did not implement the `System.AppContext` reference assembly. Class libraries authors targeting .NET Standard Platform version 5.4 need to know that their package may not work on **.NET Banana 1.0**.
 
 ```JSON
 {
@@ -228,11 +227,11 @@ The above `project.json` will cause NuGet to do a compatibiltiy check, enforcing
 }
 ```
 
-## List of CoreFx APIs and their associated generations (tentative)
+## List of CoreFx APIs and their associated .NET Standard Platform version (tentative)
 
 ### Legend 
-- `X` - API appeared in specific generation
-- `⇠` - API version determined by nearest `X` e.g. In the table below, if you target generation 5.5 and reference Microsoft.CSharp, you'd get the 5.1 API version.
+- `X` - API appeared in specific .NET Standard Platform version
+- `⇠` - API version determined by nearest `X` e.g. In the table below, if you target .NET Standard Platform version 5.5 and reference Microsoft.CSharp, you'd get the 5.1 API version.
 
 | Contract | 5.1 | 5.2 | 5.3 | 5.4 | 5.5 |
 | -------- | --- | --- | --- | --- | --- |
