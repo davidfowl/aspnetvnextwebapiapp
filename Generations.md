@@ -84,14 +84,14 @@ PCL projects will be able to consume packages with dotnet5.x but not vice versa.
 | MonoAndroid | monoandroid |
 | MonoTouch | monotouch |
 | MonoMac | monomac |
-| Xamarin.iOS | xamarinios |
-| Xamarin.PlayStation3 | xamarinpsthree | 
-| Xamarin.PlayStation4 | xamarinpsfour |
-| Xamarin.PlayStationVita | xamarinpsvita |
-| Xamarin.WatchOS | xamarinwatchos |
-| Xamarin.TVOS | xamarintvos |
-| Xamarin.Xbox360 | xamarinxboxthreesixty |
-| Xamarin.XboxOne | xamarinxboxone |
+| Xamarin iOS | xamarinios |
+| Xamarin PlayStation 3 | xamarinpsthree | 
+| Xamarin PlayStation 4 | xamarinpsfour |
+| Xamarin PlayStation Vita | xamarinpsvita |
+| Xamarin Watch OS | xamarinwatchos |
+| Xamarin TV OS | xamarintvos |
+| Xamarin Xbox 360 | xamarinxboxthreesixty |
+| Xamarin Xbox One | xamarinxboxone |
 
 ### Deprecated monikers
 
