@@ -49,6 +49,7 @@ Below is the mapping table from existing platforms to their .NET Standard Platfo
 |Universal Windows Platform|⇠|⇠|⇠|10.0|
 |DNX Core|⇠|⇠|⇠|⇠|5.0|
 |Mono/Xamarin Platforms|⇠|⇠|⇠|⇠|*|
+|Mono|⇠|⇠|*|||
 
 ### Observations
 
