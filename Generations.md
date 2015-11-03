@@ -1,7 +1,7 @@
 # .NET Platform Generations
 
 ## Why?
-Today Portable Class Libraries target an intersection of APIs depending on your selection when making the project. This gives you a specific surface area that guarntees you work on the chosen platforms. Those combinations are precomputed to give you the right set of surface area. When these portable libraries are packaged into NuGet, they are expressed with a static set of frameworks e.g. **portable-net45+win8**. While this describes the intent that you want to run on .NET Framework 4.5 and Windows 8.0, it is also restrictive since new platforms can come online that will run with those PCLs perfectly fine but will be blocked. In fact, by putting the portable dll inside of a folder with static list of profiles *really* makes it platform specific. It's no different to doing:
+Today Portable Class Libraries target an intersection of APIs depending on your platform selection when making the project. This gives you a specific surface area that guarntees you work on the chosen platforms. Those combinations are precomputed to give you the right set of surface area. When these portable libraries are packaged into NuGet, they are expressed with a static set of frameworks e.g. **portable-net45+win8**. While this describes the intent that you want to run on .NET Framework 4.5 and Windows 8.0, it is also restrictive since new platforms can come online that will run with those PCLs perfectly fine but will be blocked. In fact, by putting the portable dll inside of a folder with static list of profiles *really* makes it platform specific. It's no different to doing:
 
 ```
 MyLibrary/net45/MyLibrary.dll
