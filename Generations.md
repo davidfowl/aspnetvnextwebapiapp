@@ -2,6 +2,7 @@
 .NET Platform Generations represent binary portability across platforms using a single moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
 
 ## Terms
+- **PCL** - Portable Class Library
 - **Platform** - e.g. .NET Framework 4.5, Windows Phone 8.1
 - **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run.
 - **Implementation Assembly** - An assembly that contains an implementation of a reference assembly. These are usually implemented in the platform itself and cannot be updated without updating the platform.
@@ -127,8 +128,38 @@ https://github.com/JamesNK/Newtonsoft.Json/blob/d4916a76b5ed94342944cc665372dcc5
 Newtonsoft.Json/7.0.1/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll
 Newtonsoft.Json/7.0.1/lib/dotnet5.1/Newtonsoft.Json.dll
 ```
-
 **TODO: Specifying dependencies when migrating from a profile based PCL**
+
+#### Bait and switch
+
+PCLCrypto is a popular NuGet package that provides portable surface area via the [bait and switch technique](http://ericsink.com/entries/pcl_bait_and_switch.html). Usually, it's done with a bunch of platform
+specific folders (switch) and a portable folder (the bait) that is used for compilation (reference assembly):
+
+```
+PCLCrypto/1.0.80/lib/Xamarin.iOS/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/monoandroid/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/monotouch/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/win81/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/wp8/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/wpa81/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/portable-win8+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/PCLCrypto.dll
+```
+
+When referencing this library from a PCL project, the portable-* dll is used for compilation. This is to allow other PCLs to be written against a consistent surface area across platforms. When referencing this package from a specific platform, the platform specific implementation is chosen.
+
+With generations, and NuGet v3, this package would change to look like the following:
+
+```
+PCLCrypto/1.0.80/lib/Xamarin.iOS/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/monoandroid/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/monotouch/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/win81/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/wp8/PCLCrypto.dll
+PCLCrypto/1.0.80/lib/wpa81/PCLCrypto.dll
+PCLCrypto/1.0.80/ref/dotnet5.1/PCLCrypto.dll
+```
+
+The `ref` folder is used to tell the compiler what assembly should be used for compilation.
 
 ### Guard rails (supports)
 In order to support platforms that implement a subset of the reference assemblies in a generation, guard rails were introduced to help class library authors predict where their libraries will run. As an example, we introduce a new platform **.NET Banana 1.0**. **.NET Banana 1.0** did not implement the `System.AppContext` reference assembly. Class libraries authors targeting generation 5.4 need to know that their package may not work on **.NET Banana 1.0**.
