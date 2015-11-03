@@ -23,7 +23,7 @@ Below is the mapping table from existing platforms to their generation.
 ||⇠|⇠|4.5.2||
 ||⇠|⇠|⇠|4.6||
 ||⇠|⇠|⇠|⇠|4.6.x|
-|Windows|⇠|8|||
+|Windows|⇠|8.0|||
 ||⇠|⇠|8.1||
 |Windows Phone|⇠|8.0|||
 ||⇠|⇠|8.1||
