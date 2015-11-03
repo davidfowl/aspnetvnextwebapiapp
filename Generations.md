@@ -41,9 +41,7 @@ PCL projects will be able to consume packages with dotnet5.x but not vice versa.
 | Profile157 .NET Portable Subset (Windows 8.1, Windows Phone 8.1, Windows Phone Silverlight 8.1) | 5.1 |
 | Profile259 .NET Portable Subset (.NET Framework 4.5, Windows 8, Windows Phone 8.1, Windows Phone Silverlight 8) | 5.1 |
 
-
-### TODO:
-- Map Xamarin Platforms map to the existing generations
+**NOTE: Xamarin Platforms augment the existing profile numbers above.**
 
 ## NuGet
 
