@@ -1,16 +1,22 @@
-# .NET Platform Generations (Work in Progress)
+# .NET Platform Generations
 
 ## Why?
-Today Portable Class Libraries target an intersection of APIs depending on your platform selection when making the project. This gives you a specific surface area that guarntees you work on the chosen platforms. Those combinations are precomputed to give you the right set of surface area. When these portable libraries are packaged into NuGet, they are expressed with a static set of frameworks e.g. **portable-net45+win8**. While this describes the intent that you want to run on .NET Framework 4.5 and Windows 8.0, it is also restrictive since new platforms can come online that will run with those PCLs perfectly fine but will be blocked. In fact, by putting the portable dll inside of a folder with static list of profiles *really* makes it platform specific. It's no different to doing:
+Providing a more concrete gurantee of binary portability to future platforms.
+
+Today Portable Class Libraries target an intersection of APIs depending on your platform selection when making the project. This gives you a specific surface area that guarantees you work on the chosen platforms. Those combinations are precomputed to give you the right set of surface area. When these portable libraries are packaged into NuGet, they are expressed with a static set of frameworks e.g. **portable-net45+win8**. While this describes the intent that you want to run on .NET Framework 4.5 and Windows 8.0, it is also restrictive since new platforms can come online that will run with those PCLs perfectly fine but will be blocked. In fact, by putting the portable dll inside of a folder with static list of profiles *really* makes it platform specific. It's no different to doing:
 
 ```
 MyLibrary/net45/MyLibrary.dll
 MyLibrary/win8/MyLibrary.dll
 ```
 
-The biggest difference is that you wouldn't be able to consume it in a Portable Class Library project type. .NET Platform Generations aims to solve both problems.
+The biggest difference is that you wouldn't be able to consume it in a Portable Class Library project type.
 
 .NET Platform Generations represent binary portability across platforms using a **single** moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
+
+Generations are not too different than a the PortableXXX profiles people use today which get represented in NuGet as **portable-a+b+c** (eg. Profile111). The difference is that the **single** generation moniker evolves linearly such that NuGet and other tools can infer compatibility. Newer generations are compatible with older ones. 
+
+When this feature is complete, generations will be be able to be computed for you from tooling similar to how profileXXX is chosen today. Many other rich experiences can also be built on top of this.
 
 ## Terms
 - **PCL** - Portable Class Library
