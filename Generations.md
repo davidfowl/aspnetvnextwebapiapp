@@ -8,7 +8,7 @@ MyLibrary/net45/MyLibrary.dll
 MyLibrary/win8/MyLibrary.dll
 ```
 
-The biggest difference is that you wouldn't be able to consume it in a Portable Class Library project type.
+The biggest difference is that you wouldn't be able to consume it in a Portable Class Library project type. .NET Platform Generations aims to solve both problems.
 
 .NET Platform Generations represent binary portability across platforms using a **single** moniker. They are an evolution of Portable Class Libraries. They are "open ended" in that they aren't tied down to a static list of monikers like **portable-a+b+c** is.
 
