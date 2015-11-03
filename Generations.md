@@ -34,7 +34,7 @@ When this feature is complete, generations will be be able to be computed for yo
 ## Existing Generations
 Below is the mapping table from existing platforms to their generation.
 
-| Generation | 5.1 | 5.2 | 5.3 | 5.4 | 5.5
+| Platform | Gen 5.1 | Gen 5.2 | Gen 5.3 | Gen 5.4 | Gen 5.5
 | :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |
 |.NET Framework|⇠|4.5|||
 ||⇠|⇠|4.5.1||
