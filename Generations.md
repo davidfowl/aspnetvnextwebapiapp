@@ -34,12 +34,13 @@ Below is the mapping table from existing platforms to their generation.
 |DNX Core|⇠|⇠|⇠|⇠|5.0|
 |Mono/Xamarin Platforms|⇠|⇠|⇠|⇠|*|
 
+### Observations
+
 - If a library targets generation 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP), DNX Core 5.0 and Mono/Xamarin Platforms. 
 - If a library targets generation 5.4, it can consume libraries from all previous generations (5.3, 5.2, 5.1).
-- Generations start from .NET 4.5 and up. This is because the new API surfce area only became available on that platform. Targeting .NET <= 4.0 requires cross compilation.
-
-Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
-Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
+- Generations start from .NET 4.5 and up. This is because the new portable API surfce area (System.Runtime based surface area) only became available on that platform. Targeting .NET <= 4.0 requires cross compilation.
+- Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
+- Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
 
 ### Portable Profiles
 
