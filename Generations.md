@@ -65,19 +65,41 @@ PCL projects will be able to consume packages with dotnet5.x but not vice versa.
 
 | Generation | NuGet identifier |
 | ---------| --------------- |
-| 5.1-5.5 | dotnet5.1, dotnet5.5 |
+| 5.1 - 5.5 | dotnet5.1 - dotnet5.5 |
 
 ### Specific platform mapping
 
 | Platform | NuGet identifier |
 | ---------| --------------- |
-| .NET Framework 2.0-4.6 | net20 - net46 |
+| .NET Framework 2.0 - 4.6 | net20 - net46 |
+|.NET Micro Framework | netmf |
 | Windows 8 | win8, netcore45 |
 | Windows 8.1 | win8, netcore451 |
 | Windows Phone Silverlight (8, 8.1) | wp8, wp81 |
 | Windows Phone 8.1 | wpa8.1 |
 | Universal Windows Platform 10 | uap10, netcore50 |
+| DNX 4.5.1 - 4.6 | dnx451 - dnx46 |
 | DNX Core 5.0 | dnxcore50  |
+| Silverlight 4,5 | sl4, sl5 |
+| MonoAndroid | monoandroid |
+| MonoTouch | monotouch |
+| MonoMac | monomac |
+| Xamarin.iOS | xamarinios |
+| Xamarin.PlayStation3 | xamarinpsthree | 
+| Xamarin.PlayStation4 | xamarinpsfour |
+| Xamarin.PlayStationVita | xamarinpsvita |
+| Xamarin.WatchOS | xamarinwatchos |
+| Xamarin.TVOS | xamarintvos |
+| Xamarin.Xbox360 | xamarinxboxthreesixty |
+| Xamarin.XboxOne | xamarinxboxone |
+
+### Deprecated monikers
+
+| Platform | NuGet identifier |
+| ---------| --------------- |
+| ASP.NET 5.0 | aspnet50 |
+| ASP.NET Core 5.0 | aspnetcore50 |
+| Windows 8 | winrt |
 
 ### Package authoring
 When building a NuGet package, specifing folder with the mapping is enough to indicate what platforms your package targets.
