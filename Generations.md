@@ -18,7 +18,8 @@ Below is the mapping table from existing platforms to their generation.
 
 If a library targets Generation 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP) and DNX Core 5.0
 
-![Generations](https://jabbrlive.blob.core.windows.net/jabbr-uploads/clipboard_5130.png)
+
+![Generations](https://jabbrlive.blob.core.windows.net/jabbr-uploads/clipboard_f91a.png)
 
 Each generation enables more API surface, which means it's available on fewer platforms. As the platforms rev, their newer versions jump up into newer generation buckets.
 Platforms which have stopped revving -- like Silverlight on the phone -- will only ever be available in the earliest generations.
