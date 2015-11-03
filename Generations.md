@@ -25,12 +25,12 @@ Below is the mapping table from existing platforms to their generation.
 ||⇠|⇠|⇠|⇠|4.6.x|
 |Windows|⇠|8|||
 ||⇠|⇠|8.1||
-|Windows Phone|⇠|8|||
+|Windows Phone|⇠|8.0|||
 ||⇠|⇠|8.1||
-|Windows Phone Silverlight|8||||
+|Windows Phone Silverlight|8.0||||
 ||8.1||||
-|Universal Windows Platform|⇠|⇠|⇠|10|
-|DNX Core|⇠|⇠|⇠|⇠|5|
+|Universal Windows Platform|⇠|⇠|⇠|10.0|
+|DNX Core|⇠|⇠|⇠|⇠|5.0|
 |Mono/Xamarin Platforms|⇠|⇠|⇠|⇠|*|
 
 - If a library targets generation 5.4, it can run *only* run on .NET 4.6 or later, Universal Windows Platform 10 (UWP), DNX Core 5.0 and Mono/Xamarin Platforms. 
