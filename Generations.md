@@ -61,6 +61,11 @@ PCL projects will be able to consume packages with dotnet5.x but not vice versa.
 
 **NOTE: Xamarin Platforms augment the existing profile numbers above.**
 
+Exising PCL projects in VS2013 and VS2015 (excluding UWP targets), can only target up to generation 5.3. To use generation >= 5.4 you have 2 options:
+
+- project.json with csproj based projects
+- xproj based projects
+
 ## NuGet
 
 ### Generation mapping
