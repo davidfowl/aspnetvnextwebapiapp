@@ -129,7 +129,16 @@ https://github.com/JamesNK/Newtonsoft.Json/blob/d4916a76b5ed94342944cc665372dcc5
 Newtonsoft.Json/7.0.1/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll
 Newtonsoft.Json/7.0.1/lib/dotnet5.1/Newtonsoft.Json.dll
 ```
+
 **TODO: Specifying dependencies when migrating from a profile based PCL**
+
+#### Generating dependency references
+
+Unlike previous PCL packages, generation based targets require dependencies to be fully specified. The specific version of the dependency doesn't matter but the fact a depedency in stated does. To aid in making this simple in the short term [Oren Novotny](https://github.com/onovotny) built a tool that can be used to generate the correct depenencies for nuspec metadata for your generation based projects/assemblies: 
+
+https://github.com/onovotny/ReferenceGenerator
+
+We expect to have something like built into the project system as a first class experience.
 
 #### Bait and switch
 
