@@ -31,25 +31,28 @@ The .NET Standard Platform version represent binary portability across platforms
 - Lower versions are always compatible with higher versions.
 
 ## Existing .NET Standard Platform versions
-Below is the mapping table from existing platforms to their .NET Standard Platform version.
+Mapping the .NET Standard Platform to existing platforms versions.
 
-| | 5.1 | 5.2 | 5.3 | 5.4 | 5.5
-| :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |
-|.NET Framework|⇠|4.5|||
-||⇠|⇠|4.5.1||
-||⇠|⇠|4.5.2||
-||⇠|⇠|⇠|4.6||
-||⇠|⇠|⇠|⇠|4.6.x|
-|Windows|⇠|8.0|||
-||⇠|⇠|8.1||
-|Windows Phone|⇠|8.0|||
-||⇠|⇠|8.1||
-|Windows Phone Silverlight|8.0||||
-||8.1||||
-|Universal Windows Platform|⇠|⇠|⇠|10.0|
-|DNX Core|⇠|⇠|⇠|⇠|5.0|
-|Mono/Xamarin Platforms|⇠|⇠|⇠|⇠|*|
-|Mono|⇠|⇠|*|||
+In general class libraries which target a lower .NET Standard Platform version like 5.1 can be loaded by the largest number of older target platforms, but will have access to a more limited, older set of system APIs. On the other hand class libraries which target a higher .NET Standard Platform version like 5.4 can be loaded by a smaller number of newer target platforms, but will have access to a larger, more recent set of system APIs. 
+
+| Target Platform Name | Alias |  |  |  |  |  |
+| :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |:--------- |
+|.NET Standard Platform | dotnet | 5.1 | 5.2 | 5.3 | 5.4 | 5.5 |
+|.NET Framework|net|⇢|4.5|||
+|||⇢|⇢|4.5.1||
+|||⇢|⇢|4.5.2||
+|||⇢|⇢|⇢|4.6||
+|||⇢|⇢|⇢|⇢|4.6.x|
+|Windows|win|⇢|8.0|||
+|||⇢|⇢|8.1||
+|Windows Phone|wpa|⇢|8.0|||
+|||⇢|⇢|8.1||
+|Windows Phone Silverlight|wp|8.0||||
+|||8.1||||
+|Universal Windows Platform|uap|⇢|⇢|⇢|10.0|
+|DNX Core|dnxcore|⇢|⇢|⇢|⇢|5.0|
+|Mono/Xamarin Platforms||⇢|⇢|⇢|⇢|*|
+|Mono||⇢|⇢|*|||
 
 ### Observations
 
