@@ -33,7 +33,7 @@ The .NET Standard Platform version represent binary portability across platforms
 ## Existing .NET Standard Platform versions
 Below is the mapping table from existing platforms to their .NET Standard Platform version.
 
-| Platform | 5.1 | 5.2 | 5.3 | 5.4 | 5.5
+| | 5.1 | 5.2 | 5.3 | 5.4 | 5.5
 | :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |
 |.NET Framework|⇠|4.5|||
 ||⇠|⇠|4.5.1||
