@@ -39,18 +39,18 @@ In general class libraries which target a lower .NET Standard Platform version l
 | Target Platform Name | Alias |  |  |  |  |  |
 | :---------- | :--------- |:--------- |:--------- |:--------- |:--------- |:--------- |
 |.NET Standard Platform | dotnet | 5.1 | 5.2 | 5.3 | 5.4 | 5.5 |
-|.NET Framework|net|⇢|4.5|||
-|||⇢|⇢|4.5.1||
-|||⇢|⇢|4.5.2||
+|.NET Framework|net|⇢|⇢|⇢|⇢|4.6.x|
 |||⇢|⇢|⇢|4.6||
-|||⇢|⇢|⇢|⇢|4.6.x|
-|Windows|win|⇢|8.0|||
-|||⇢|⇢|8.1||
-|Windows Phone|wpa|⇢|8.0|||
-|||⇢|⇢|8.1||
-|Windows Phone Silverlight|wp|8.0||||
-|||8.1||||
+|||⇢|⇢|4.5.2||
+|||⇢|⇢|4.5.1||
+|||⇢|4.5|||
 |Universal Windows Platform|uap|⇢|⇢|⇢|10.0|
+|Windows|win|⇢|⇢|8.1||
+|||⇢|8.0|||
+|Windows Phone|wpa|⇢|⇢|8.1||
+|||⇢|8.0|||
+|Windows Phone Silverlight|wp|8.1||||
+|||8.0||||
 |DNX Core|dnxcore|⇢|⇢|⇢|⇢|5.0|
 |Mono/Xamarin Platforms||⇢|⇢|⇢|⇢|*|
 |Mono||⇢|⇢|*|||
