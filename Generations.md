@@ -157,8 +157,6 @@ Newtonsoft.Json/7.0.1/lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll
 Newtonsoft.Json/7.0.1/lib/dotnet5.1/Newtonsoft.Json.dll
 ```
 
-**TODO: Specifying dependencies when migrating from a profile based PCL**
-
 #### Generating dependency references
 
 Unlike previous PCL packages, targeting the .NET Standard Platform requires the package dependencies to be fully specified. The specific version of the dependency doesn't matter but stating the dependency does. To aid in making this simple in the short term [Oren Novotny](https://github.com/onovotny) built a tool that can be used to generate the correct depenencies for nuspec metadata for your .NET Standard Platform based projects/assemblies:
