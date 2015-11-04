@@ -23,7 +23,7 @@ The .NET Standard Platform version represents binary portability across platform
 - **Reference Assembly** - An assembly that contains API surface only. There is no IL in the method bodies. It is used for compilation only, and cannot be used to run. Also commonly referred to as "Contracts".
 - **Implementation Assembly** - An assembly that contains an implementation of a reference assembly. These are usually implemented in the platform itself and cannot be updated without updating the platform.
 - **.NET Standard Platform** - versioned sets of the reference assemblies.
-- - **Cross compile** - to compile the same source code files to different target platforms, i.e. against different API sets.
+- **Cross compile** - to compile the same source code files to different target platforms, i.e. against different API sets.
 
 ## Principles
 - Platform owners implement reference assemblies from a particular .NET Standard Platform version.
